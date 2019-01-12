@@ -7,7 +7,6 @@ pipeline {
     }
     stages { 
        stage ('Initialize') {
-            emailext body: '', subject: 'starting jenkins', to: 'enourhira@gmail.com'
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
