@@ -44,6 +44,13 @@ pipeline {
                 sh 'mvn javadoc:javadoc'
             }
         }
+         stage('empaqueter le projet'){
+            steps{
+                sh 'mvn clean package'
+            }
+        }
+
+
         
     }
 }
