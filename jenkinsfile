@@ -1,27 +1,22 @@
 pipeline{
     agent any
+
+    tools{
+        maven:'maven3'
+        jdk: 'jdk1.8.0_151.jdk'
+    }
     stages{
-    stage('Compile Stage'){
+    stage('Build'){
         steps {
-                withMaven(maven :'maven3'){
-                    sh 'mvn clean compile'
-                }
+                bat 'mvn install'
+        }
+        post{
+            success{
+                junit 'target/surefire-reports/**/*.xml'
+            }
         }     
     }
-    stage('Testing Stage'){
-         steps {
-                withMaven(maven :'maven3'){
-                    sh 'mvn test'
-                }
-        }     
-    }
-     stage('Deployment Stage'){
-         steps {
-                withMaven(maven :'maven3'){
-                    sh 'mvn deploy'
-                }
-        }     
-    }
-    }
+    
+}
 
 }
