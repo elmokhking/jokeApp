@@ -60,15 +60,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+					<groupId>io.gatling</groupId>
+					<artifactId>gatling-maven-plugin</artifactId>
+			</plugin>
 		</plugins>
-	    <plugin>
-        <groupId>net.alchim31.maven</groupId>
-        <artifactId>scala-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>io.gatling</groupId>
-        <artifactId>gatling-maven-plugin</artifactId>
-</plugin>
+	
 	</build>
 	<profiles>
 	<profile>
