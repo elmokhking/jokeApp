@@ -49,11 +49,7 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-         stage('gatling test'){
-            steps{
-                sh 'mvn gatling:test'
-            }
-        }
+        
 
 
         

@@ -45,17 +45,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>io.gatling.highcharts</groupId>
-			<artifactId>gatling-charts-highcharts</artifactId>
-			<version>3.0.0</version>
-			<scope>test</scope>
-		</dependency>
-		 <dependency>
-        <groupId>org.scala-lang</groupId>
-        <artifactId>scala-library</artifactId>
-        <version>2.11.8</version>
-        </dependency>
+	
 
 	</dependencies>
 
@@ -64,14 +54,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>net.alchim31.maven</groupId>
-				<artifactId>scala-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-					<groupId>io.gatling</groupId>
-					<artifactId>gatling-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	
