@@ -1,13 +1,34 @@
-pipeline{
+
 pipeline { 
-    agent any  
+    agent any
+    tools { 
+        maven 'maven3' 
+        jdk 'jdk1.8.0_151.jdk' 
+    }
     stages { 
+       stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
         stage('Build') { 
-            steps { 
-               echo 'This is a minimal pipeline.' 
+              steps {
+                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml' 
+                }
+            }
+        }
+            stage('Test') { 
+              steps {
+                sh 'mvn  test' 
             }
         }
     }
 }
 
-}
