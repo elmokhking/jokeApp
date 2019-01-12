@@ -34,6 +34,12 @@ pipeline {
                 sh 'mvn clean cobertura:cobertura -Pjenkins'
             }
         }
+        stage('Cgeneration de la documentation'){
+            steps{
+                sh 'mvn javadoc:javadoc'
+            }
+        }
+        
     }
 }
 
