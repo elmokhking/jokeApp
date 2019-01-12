@@ -7,6 +7,7 @@ pipeline {
     }
     stages { 
        stage ('Initialize') {
+            emailext body: '', subject: 'starting jenkins', to: 'enourhira@gmail.com'
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
@@ -14,7 +15,6 @@ pipeline {
                 ''' 
             }
         }
-        emailext body: '', subject: 'starting jenkins', to: 'enourhira@gmail.com'
         stage('Build') { 
               steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
