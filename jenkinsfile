@@ -49,6 +49,12 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+
+         stage('deployement dans nexus'){
+            steps{
+                sh 'mvn deploy'
+            }
+        }
         
 
 
